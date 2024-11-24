@@ -1,0 +1,1209 @@
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #f4f4f4;
+}
+
+/* Barra de navegación mejorada */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  margin-left: -20px; /* Mover la barra más hacia la izquierda */
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 5px 20px;
+  margin-left: -20px; /* Mantener el ajuste cuando esté en estado "scrolled" */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Limita el ancho máximo */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+  transform: scale(1.1);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f39c12;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Menú hamburguesa */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  position: absolute; /* Cambiar la posición a absoluta */
+  right: 70px; /* Reducir el valor para moverlo un poco menos hacia la derecha */
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%); /* Ajustar para que quede perfectamente centrado */
+}
+
+
+.hamburger .bar {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para el menú hamburguesa y menú en dispositivos móviles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    margin-left: 0; /* Volver al valor original para dispositivos móviles */
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger .bar.active {
+    background-color: #f39c12;
+  }
+}
+
+/* Ajuste de la barra de navegación en pantallas grandes */
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 15px 40px;
+    margin-left: -20px; /* Asegura que se desplace más a la izquierda en pantallas grandes */
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav-links li {
+    margin: 0 20px;
+  }
+}
+
+
+
+/* Sección Hero (Inicio) */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2ecc71, #1abc9c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* Fondo de video */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.hero-content {
+  z-index: 1;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  animation: slideInFromLeft 1.5s ease-in-out;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 0.5s forwards;
+  color: #f0f0f0;
+}
+
+.cta-button {
+  padding: 12px 25px;
+  background-color: #fff;
+  color: #2ecc71;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 1s forwards;
+}
+
+.cta-button:hover {
+  background-color: #2ecc71;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Gráficos decorativos */
+.graphics {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 1;
+}
+
+.graphic-icon {
+  width: 40px;
+  height: 40px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Animación flotante para gráficos */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animaciones generales */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+
+  .graphics {
+    gap: 10px;
+  }
+
+  .graphic-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Fondo gráfico de partículas */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Fondo degradado animado */
+#about {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa, #80cbc4);
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.about-container {
+  position: relative;
+  max-width: 1000px;
+  z-index: 2;
+}
+
+.about-text {
+  position: relative;
+  background: rgba(20, 54, 66, 0.9);
+  color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: justify;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-text:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-text h2 {
+  text-align: center; /* Centra el título */
+  font-size: 2.0rem;
+  color: #00ddff; /* Color amarillo suave para el título */
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* Partículas flotantes en el fondo */
+#about::before,
+#about::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 215, 150, 0.3);
+  animation: float 10s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+#about::before {
+  width: 220px;
+  height: 220px;
+  top: -50px;
+  left: 25%;
+  background: radial-gradient(circle, #ffcc80, #ff8a65);
+  animation-duration: 12s;
+  animation-delay: 3s;
+}
+
+#about::after {
+  width: 280px;
+  height: 280px;
+  bottom: -60px;
+  right: 20%;
+  background: radial-gradient(circle, #80deea, #26c6da);
+  animation-duration: 10s;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+/* Adaptación a móviles */
+@media screen and (max-width: 768px) {
+  #about {
+    padding: 40px 15px;
+  }
+  
+  .about-text {
+    padding: 20px;
+  }
+  
+  .about-text h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del título en móviles */
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+
+
+  
+/* Estilo general para la sección de bienvenida */
+.nuestros-servicios {
+  position: relative;
+  padding: 0;
+  background: url('Imagenes/laptop-2838921_1280.jpg') center/cover no-repeat;
+  text-align: center;
+  height: 100vh; /* Altura completa de la ventana en pantallas grandes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nuestros-servicios::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nuestros-servicios .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nuestros-servicios h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.nuestros-servicios .button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nuestros-servicios .contact-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: rgb(0, 228, 198);
+  color: #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
+.nuestros-servicios .contact-button:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nuestros-servicios {
+    height: 100vw; /* Altura igual al ancho de la ventana en dispositivos móviles */
+  }
+
+  .nuestros-servicios .contact-button {
+    padding: 12px 24px;
+  }
+}
+
+
+
+/* Contenedor de la galería */
+.gallery-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Título de la galería */
+.gallery-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.gallery-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #f39c12;
+}
+
+/* Estilos de la galería */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Elementos de la galería */
+.gallery-item {
+  flex: 1 1 calc(33.333% - 2rem);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+  
+  /* Sección de testimonios */
+  #testimonios {
+    padding: 2rem;
+    background: #fff;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Contenedor de testimonios */
+  .testimonial-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  /* Tarjetas de testimonios */
+  .testimonial-card {
+    flex: 1 1 calc(33.333% - 2rem);
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-card h3 {
+    margin: 0.5rem 0;
+    color: #333;
+  }
+  
+  .testimonial-card span {
+    color: #777;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .testimonial-card {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-card {
+      flex: 1 1 100%;
+    }
+  }
+  
+  
+  #faq {
+    background: linear-gradient(to bottom, rgb(255, 255, 255), #00ca87); /* Degradado de arriba hacia abajo */
+    text-align: center;
+    padding: 40px 20px; /* Aumenta el espacio interno para separar del contenido */
+  }
+  
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+  
+  .faq-item {
+    margin-bottom: 20px; /* Aumenta el espacio entre elementos */
+    background-color: #ffffff;
+    padding: 20px; /* Aumenta el espacio interno */
+    border-radius: 10px; /* Reducido el radio del borde para suavizar las esquinas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+    width: 80%; /* Establece un ancho máximo para la pregunta/respuesta */
+    max-width: 600px; /* Ajusta el ancho máximo para pantallas grandes */
+  }
+  
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  #faq h2 {
+    margin-bottom: 30px; /* Espacio entre el título y la primera pregunta */
+    font-size: 24px; /* Tamaño de fuente del título */
+    color: #000000; /* Color del título */
+    font-weight: bold;
+  }
+
+  .question h3 {
+    margin: 0;
+    font-size: 18px; /* Reducido el tamaño del texto de las preguntas */
+    color: #000000; /* Cambiado el color del texto de las preguntas */
+    font-weight: bold; /* Hacer el texto más grueso */
+    flex: 1; /* Permite que la pregunta ocupe todo el espacio disponible */
+  }
+  
+  .toggle-btn {
+    background-color: #ffffff;
+    color: #005ce6;
+    text-align: center;
+    line-height: 16px;
+    font-weight: bold;
+    width: 20px; /* Aumentado el tamaño del botón */
+    height: 20px; /* Aumentado el tamaño del botón */
+    border-radius: 50%;
+    flex-shrink: 0; /* Evita que el botón se reduzca en tamaño */
+  }
+  
+  .answer {
+    display: none;
+    font-size: 16px;
+    color: #000000;
+    text-align: justify; /* Justifica el texto */
+    word-spacing: 3px; /* Agrega espacio entre palabras */
+    margin-top: 10px; /* Agrega espacio entre la respuesta y el título */
+  }
+  
+  .answer p:last-child {
+    text-align-last: left; /* Alinea la última línea del párrafo a la izquierda */
+  }
+  
+  /* Estilos cuando la pregunta o respuesta está cerrada */
+  .question .toggle-btn::after {
+    content: "\25BC"; /* Flecha hacia abajo */
+  }
+  
+  .answer .toggle-btn::after {
+    content: ""; /* Sin contenido para la flecha cuando está cerrada */
+  }
+  
+  /* Estilos cuando la pregunta o respuesta está abierta */
+  .question.open .toggle-btn::after {
+    content: "\25B2"; /* Flecha hacia arriba */
+  }
+  
+  .answer.open .toggle-btn::after {
+    content: ""; /* Sin contenido para la flecha cuando está abierta */
+  }
+  
+  /* Estilos para mostrar respuestas cuando la pregunta está abierta */
+  .question.open + .answer,
+  .answer.open {
+    display: block;
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media screen and (max-width: 768px) {
+    .faq-item {
+      width: 90%; /* Ajusta el ancho máximo para pantallas pequeñas */
+    }
+  
+    .toggle-btn {
+      width: 24px; /* Aumenta el tamaño del botón para pantallas pequeñas */
+      height: 24px; /* Aumenta el tamaño del botón para pantallas pequeñas */
+    }
+  }
+  
+  .answer .toggle-btn::after {
+    content: ""; /* Sin contenido para la flecha cuando está cerrada */
+  }
+  
+  /* Estilos cuando la pregunta o respuesta está abierta */
+  .question.open .toggle-btn::after {
+    content: "\25B2"; /* Flecha hacia arriba */
+  }
+  
+  .answer.open .toggle-btn::after {
+    content: ""; /* Sin contenido para la flecha cuando está abierta */
+  }
+  
+  /* Estilos para mostrar respuestas cuando la pregunta está abierta */
+  .question.open + .answer,
+  .answer.open {
+    display: block;
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media screen and (max-width: 768px) {
+    .faq-item {
+      width: 90%; /* Ajusta el ancho máximo para pantallas pequeñas */
+    }
+  
+    .toggle-btn {
+      width: 24px; /* Aumenta el tamaño del botón para pantallas pequeñas */
+      height: 24px; /* Aumenta el tamaño del botón para pantallas pequeñas */
+    }
+  }
+  
+  /* Estilos para el mapa responsive */
+
+   /* Centrar el título */
+   .map-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+
+      .map-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+        margin-bottom: 2rem; /* Espacio debajo del mapa */
+      }
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      /* Estilo adicional para mejorar la visualización en pantallas grandes */
+      @media (min-width: 768px) {
+        .map-container {
+          height: 500px; /* Altura fija en pantallas grandes */
+          padding-bottom: 0; /* Eliminar el relleno inferior */
+        }}
+  
+  
+/* Estilos generales */
+#contacto {
+  background-color: #f9f9f9; /* Color de fondo suave */
+  color: #333; /* Texto con contraste */
+  text-align: center;
+  padding: 25px 15px; /* Espaciado interno más compacto */
+  border-bottom: 2px solid #0078ff; /* Borde inferior azul */
+}
+
+#contacto h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px; /* Menos espacio debajo del título */
+  color: #0078ff; /* Título en azul */
+}
+
+#contacto p {
+  font-size: 1em;
+  margin-bottom: 15px; /* Margen más reducido */
+  line-height: 1.4; /* Ajuste para menor altura de línea */
+}
+
+/* Redes sociales */
+.redes-sociales {
+  text-align: center;
+  margin-bottom: 20px; /* Espaciado inferior más reducido */
+}
+
+.red-social {
+  display: inline-block;
+  background-color: #3b5998; /* Azul de Facebook */
+  color: #fff;
+  padding: 8px 18px; /* Botones más compactos */
+  border-radius: 5px; /* Bordes levemente redondeados */
+  margin: 4px; /* Espaciado ajustado entre botones */
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.red-social.instagram {
+  background-color: #c13584; /* Rosa de Instagram */
+}
+
+.red-social:hover {
+  background-color: #2d4373; /* Color más oscuro al pasar el mouse */
+  transform: translateY(-1px); /* Efecto de elevación aún más sutil */
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button {
+  text-align: center;
+  margin-top: 20px; /* Espaciado superior ajustado */
+  margin-bottom: 25px; /* Espaciado inferior más compacto */
+}
+
+.whatsapp-button p {
+  margin-bottom: 10px; /* Espaciado reducido */
+  font-size: 1em; /* Tamaño de fuente más compacto */
+  font-weight: bold;
+}
+
+.whatsapp-link {
+  background-color: #25d366; /* Verde de WhatsApp */
+  color: #fff;
+  padding: 10px 22px; /* Tamaño compacto */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.95em; /* Tamaño de texto levemente más pequeño */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-link:hover {
+  background-color: #128c7e; /* Verde más oscuro */
+  transform: translateY(-1px); /* Efecto de elevación sutil */
+}
+
+
+   
+/* Estilo para el botón de WhatsApp fijo */
+.whatsapp-button-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+}
+
+.whatsapp-button-fixed img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button-fixed img:hover {
+  transform: scale(1.1);
+}
+
+/* Media query para ajustar el tamaño del botón en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .whatsapp-button-fixed {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Estilo para el botón flotante */
+.chat-btn {
+  position: fixed;
+  bottom: 90px; /* Separación ligera entre el botón de WhatsApp y el botón del chat */
+  right: 20px;
+  width: 60px; /* Mismo tamaño que el de WhatsApp */
+  height: 60px; /* Mismo tamaño que el de WhatsApp */
+  background-color: #007acc;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Media query para ajustar el tamaño del botón de chat en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .chat-btn {
+    width: 50px; /* Mismo tamaño que el de WhatsApp en dispositivos móviles */
+    height: 50px; /* Mismo tamaño que el de WhatsApp en dispositivos móviles */
+    bottom: 75px; /* Separación ligera entre ambos botones en móviles */
+  }
+}
+
+/* Estilo para el contenedor del chat */
+.chat-container {
+  position: fixed;
+  bottom: 80px; /* Ajustado para que el chat no esté directamente encima del botón de WhatsApp */
+  right: 20px;
+  width: 400px;
+  max-width: 90%;
+  height: 70vh;
+  border-radius: 15px;
+  background-color: #222831;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  display: none;
+}
+
+
+ 
+
+/* Estilo para la imagen del ícono */
+.chat-btn img {
+  width: 100%; /* Asegura que ocupe todo el ancho del botón */
+  height: 100%; /* Asegura que ocupe todo el alto del botón */
+  object-fit: cover; /* Ajusta la imagen para que se recorte adecuadamente dentro del contenedor */
+  border-radius: 50%; /* Mantiene la forma circular */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.chat-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-btn:hover img {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+ 
+
+/* Botón de cerrar (X) */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #007acc;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover para el botón de cerrar */
+.close-btn:hover {
+  background-color: #00adb5;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto active para el botón de cerrar */
+.close-btn:active {
+  transform: scale(1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+ 
+/* Caja del chat */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  background-color: #1b1b2f;
+  border-bottom: 2px solid #007acc;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Estilo de los mensajes */
+.chat-box .message {
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 80%;
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #00adb5;
+  color: #fff;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #393e46;
+  color: #f4f4f9;
+}
+
+/* Estilos de los botones de opción */
+.option-button {
+  display: block;
+  margin: 6px 0;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  color: #007acc;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #007acc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-transform: capitalize;
+}
+
+/* Efecto hover */
+.option-button:hover {
+  background-color: #007acc;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+/* Efecto active */
+.option-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto focus */
+.option-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 122, 204, 0.5);
+}
+
+/* Estilos para la caja de entrada */
+.input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  position: relative;
+  width: 100%;
+}
+
+/* Estilos para el campo de texto */
+#user-input {
+  width: 60%;
+  padding: 6px 10px;
+  border: 2px solid #007acc;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#user-input:focus {
+  border-color: #00adb5;
+}
+
+/* Estilos para el botón de enviar */
+.input-box button {
+  background-color: #007acc;
+  color: white;
+  font-size: 18px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efecto hover para el botón de enviar */
+.input-box button:hover {
+  background-color: #00adb5;
+  transform: scale(1.05);
+}
+
+/* Efecto de clic en el botón de enviar */
+.input-box button:active {
+  transform: scale(1);
+}
+     /* Estilos generales para el pie de pÃ¡gina */
+    footer {
+      background-color: #000; /* Color del encabezado (rosa oscuro) */
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }

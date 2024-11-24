@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon"
+    href="Imagenes/medical-5459630_1280-fotor-20231220144025.png" type="image/x-icon">
+  <title>Salud Integral</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+ <!-- Barra de navegación -->
+ <nav class="navbar">
+  <div class="navbar-container">
+    <a href="#" class="logo">Salud Integral</a>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#about">Acerca de</a></li>
+      <li><a href="#nuestros-servicios">Nuestros Servicios</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#faq">Preguntas Frecuentes</a></li>
+      <li><a href="#map">Mapa</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="hamburger" id="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>
+<section id="inicio" class="hero">
+  <!-- Video de fondo -->
+  <video class="hero-video" autoplay loop muted>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Tu navegador no soporta el formato de video.
+  </video>
+
+  <!-- Fondo gráfico de partículas -->
+  <div id="particles-js"></div>
+
+  <div class="hero-content">
+    <h1>
+      🏥 Bienvenidos a <span style="color: #1abc9c;">Salud Integral</span>
+    </h1>
+    <p>
+      💉 Tu bienestar físico, emocional y espiritual está en nuestras manos. 
+      🌿 Estamos aquí para ayudarte a vivir mejor.
+    </p>
+    <a href="#about" class="cta-button">✨ Conoce más ✨</a>
+  </div>
+
+  <!-- Gráficos decorativos -->
+  <div class="graphics">
+    <img src="https://cdn-icons-png.flaticon.com/512/3349/3349320.png" alt="Icono de hospital" class="graphic-icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/4298/4298977.png" alt="Icono de estetoscopio" class="graphic-icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/2942/2942917.png" alt="Icono de cruz médica" class="graphic-icon">
+  </div>
+  
+</section>
+
+
+<!-- Sección Acerca de Nosotros -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>Acerca de Salud Integral</h2>
+      <p>En Salud Integral, te guiamos hacia un bienestar completo con atención personalizada y un enfoque holístico. No solo tratamos enfermedades, sino que trabajamos para fortalecer tu salud física, emocional y espiritual.</p>
+      <p>Ofrecemos un ambiente seguro y acogedor, donde cada consulta es una oportunidad para conectar contigo y diseñar un plan de salud adaptado a tus necesidades.</p>
+      <p>Confía en nosotros para brindarte un enfoque integral que combina terapias médicas avanzadas, asesoría nutricional y técnicas de manejo del estrés para mejorar tu calidad de vida.</p>
+    </div>
+  </div>
+</section>
+
+  <div class="nuestros-servicios" id="nuestros-servicios">
+    <div class="container">
+      <h2>Nuestros Servicios </h2>
+      <div class="button-container">
+        <a href="Servicios.html" class="contact-button">Servicios</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de la Galería -->
+<section id="gallery" class="gallery-container">
+  <h2 class="gallery-title">Galería Salud Integral</h2>
+  <div class="gallery">
+    <!-- Elemento de la Galería 1 -->
+    <div class="gallery-item">
+      <img src="Imagenes/consulting-3031678_1280.jpg" alt="Plato 1">
+    </div>
+    <!-- Elemento de la Galería 2 -->
+    <div class="gallery-item">
+      <img src="Imagenes/imau.jpg" alt="Plato 2">
+    </div>
+    <!-- Elemento de la Galería 3 -->
+    <div class="gallery-item">
+      <img src="Imagenes/laboratory-2815641_1280.jpg" alt="Plato 3">
+    </div>
+  </div>
+</section>
+  
+<section id="testimonios">
+  <div class="container">
+    <h2 class="section-title">Testimonios de nuestros pacientes</h2>
+    <div class="testimonial-wrapper">
+      <div class="testimonial-card">
+        <p>"El equipo médico es excepcional, siempre me siento en buenas manos cada vez que vengo."</p>
+        <h3>María Pérez</h3>
+        <span>Paciente recurrente</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"La atención personalizada y el cuidado que recibí durante mi tratamiento fueron incomparables."</p>
+        <h3>José Rodríguez</h3>
+        <span>Paciente de larga duración</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Desde que descubrí Salud Integral, mi calidad de vida ha mejorado significativamente. ¡Gracias por todo!"</p>
+        <h3>Ana Gutiérrez</h3>
+        <span>Nuevo paciente</span>
+      </div>
+      <!-- Puedes agregar más testimonios según sea necesario -->
+    </div>
+  </div>
+</section>
+
+<!-- Sección Preguntas Frecuentes -->
+<section id="faq" class="section">
+  <h2>Preguntas Frecuentes</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="question">
+        <h3>¿Qué servicios médicos ofrecen?</h3>
+        <div class="toggle-btn"></div>
+      </div>
+      <div class="answer">
+        <p>En Salud Integral ofrecemos una amplia gama de servicios médicos que incluyen atención primaria, especialidades médicas como cardiología y dermatología, así como servicios de rehabilitación y fisioterapia. Para más detalles, puede consultar nuestra sección de servicios en nuestro sitio web o contactarnos directamente.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question">
+        <h3>¿Cómo puedo solicitar una cita médica?</h3>
+        <div class="toggle-btn"></div>
+      </div>
+      <div class="answer">
+        <p>Puede solicitar una cita médica llamando a nuestra clínica o a través de nuestro sitio web. Le recomendamos que haga una reserva con anticipación para asegurar su consulta con el médico de su elección.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question">
+        <h3>¿Qué medidas toman para garantizar la seguridad de los pacientes?</h3>
+        <div class="toggle-btn"></div>
+      </div>
+      <div class="answer">
+        <p>En Salud Integral, seguimos estrictos protocolos de limpieza y desinfección para garantizar un entorno seguro para todos nuestros pacientes y personal. Además, cumplimos con todas las normativas y recomendaciones sanitarias vigentes.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question">
+        <h3>¿Ofrecen servicios de telemedicina?</h3>
+        <div class="toggle-btn"></div>
+      </div>
+      <div class="answer">
+        <p>Sí, ofrecemos consultas médicas a través de telemedicina para aquellos pacientes que prefieran ser atendidos de manera remota. Puede programar una consulta virtual llamando a nuestra clínica o utilizando nuestra plataforma online.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sección de Google Maps -->
+<section id="map">
+  <div class="container">
+    <h2 class="map-title">Encuéntranos aquí</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086144409773!2d144.9631!3d-37.8162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xfb9e050b8e0cb3b5!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1594136421397!5m2!1sen!2sau"
+        width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Contacto -->
+<section id="contacto" class="section">
+  <h2>Contacto</h2>
+  <p>¡Conéctate con nosotros o contáctanos para cualquier consulta!</p>
+  
+  <div class="contacto-content">
+    <div class="redes-sociales">
+      <p>Síguenos en nuestras redes:</p>
+      <!-- Estilo mejorado para los enlaces de redes sociales -->
+      <a href="https://www.facebook.com/SaludIntegral" target="_blank" class="red-social facebook">Facebook</a>
+      <a href="https://www.instagram.com/SaludIntegral" target="_blank" class="red-social instagram">Instagram</a>
+    </div>
+  </div>
+  
+  <!-- Botón de WhatsApp -->
+  <div class="whatsapp-button">
+    <p>¡Contáctanos por WhatsApp!</p>
+    <a href="https://wa.me/+584268674852" target="_blank" class="whatsapp-link">Contactar por WhatsApp</a>
+  </div>
+</section>
+
+
+ 
+<!-- Botón de WhatsApp fijo -->
+<a href="https://wa.me/+584149697456" target="_blank" class="whatsapp-button-fixed">
+  <img src="Imagenes/Icono De Teléfono Whatsapp PNG ,dibujos  Whatsapp, Icono, Teléfono PNG y Vector para Descargar Gratis _ Pngtree.jpg"
+    alt="WhatsApp" />
+</a>
+
+ 
+
+  <!-- Botón flotante para abrir el chatbot -->
+<div class="chat-btn" id="chat-btn" onclick="toggleChat()">
+  <img src="Imagenes/chat-2389223_1280.png" alt="Chat" />
+</div>
+
+<!-- Contenedor del chatbot -->
+<div class="chat-container" id="chat-container" style="display: none;"> <!-- Inicia oculto -->
+  <button class="close-btn" onclick="toggleChat()">X</button>
+  <div class="chat-box" id="chat-box">
+      <!-- Mensajes del chatbot aparecerán aquí -->
+  </div>
+  <div class="input-box">
+      <input type="text" id="user-input" placeholder="Escribe un mensaje..." onkeydown="if(event.key === 'Enter'){sendMessage()}">
+      <button onclick="sendMessage()">
+          <i class="fas fa-paper-plane"></i>  <!-- Icono de enviar -->
+      </button>
+  </div>
+</div>
+
+ 
+
+   
+<!-- Pie de página -->
+<footer>
+  <p>© 2024 Salud Integral. Todos los derechos reservados.</p>
+</footer>
+
+
+<script>
+  const chatBox = document.getElementById("chat-box");
+  const userInput = document.getElementById("user-input");
+  const chatContainer = document.getElementById("chat-container");
+  const chatBtn = document.getElementById("chat-btn");
+
+  const welcomeMessage = "¡Buenos días! Soy tu asistente virtual de Salud Integral. ¿En qué puedo ayudarte hoy?";
+  const optionsMessage = "Por favor, elige una opción:";
+
+  const mainOptions = [
+      "Horarios",
+      "Servicios",
+      "Ubicación",
+      "Contacto",
+      "Página web",
+      "Testimonios",
+      "Doctores"
+  ];
+
+  const serviceOptions = [
+      "Consultas Médicas Generales",
+      "Pediatría",
+      "Ginecología",
+      "Cardiología",
+      "Dermatología",
+      "Medicina Estética"
+  ];
+
+  function addMessage(content, sender = "bot", scrollToBottom = true) {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message", sender === "user" ? "user-message" : "bot-message");
+      messageDiv.innerHTML = content;
+      chatBox.appendChild(messageDiv);
+
+      if (scrollToBottom) {
+          chatBox.scrollTop = chatBox.scrollHeight;
+      }
+  }
+
+  function showMainOptions() {
+      addMessage(optionsMessage, "bot", false);
+
+      const optionsContainer = document.createElement("div");
+      optionsContainer.classList.add("options-container");
+
+      mainOptions.forEach(option => {
+          const optionButton = document.createElement("button");
+          optionButton.classList.add("option-button");
+          optionButton.innerText = option;
+          optionButton.onclick = function() {
+              processOption(option);
+          };
+          optionsContainer.appendChild(optionButton);
+      });
+
+      chatBox.appendChild(optionsContainer);
+      chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function showServiceOptions() {
+      addMessage("Estos son nuestros servicios. Por favor, selecciona el que deseas más información.", "bot", false);
+
+      const optionsContainer = document.createElement("div");
+      optionsContainer.classList.add("options-container");
+
+      serviceOptions.forEach(service => {
+          const serviceButton = document.createElement("button");
+          serviceButton.classList.add("option-button");
+          serviceButton.innerText = service;
+          serviceButton.onclick = function() {
+              processService(service);
+          };
+          optionsContainer.appendChild(serviceButton);
+      });
+
+      chatBox.appendChild(optionsContainer);
+      addMessage("Selecciona un servicio para más detalles.", "bot", true);
+  }
+
+  function processOption(option) {
+      addMessage(`Paciente: He seleccionado la opción: "${option}"`, "user");
+
+      let response = '';
+      switch (option) {
+          case "Horarios":
+              response = "Nuestro horario de atención es de lunes a viernes de 8:00 am a 6:00 pm, y los sábados de 9:00 am a 2:00 pm. Cerramos los domingos.";
+              break;
+          case "Servicios":
+              showServiceOptions();
+              return;
+          case "Ubicación":
+              response = "Nos encontramos en la Calle Principal, Edificio Salud Integral, Piso 3, Ciudad, Estado, Venezuela.";
+              break;
+          case "Contacto":
+              response = "Puedes contactarnos al número <strong>+58 123 456 789</strong> o a través de nuestras redes sociales.";
+              break;
+          case "Página web":
+              response = "Visita nuestra página web en <strong>www.saludintegral.com</strong> para más información.";
+              break;
+          case "Testimonios":
+              response = "Aquí lo que dicen nuestros pacientes:<br><strong>Juan Pérez</strong>: \"La experiencia fue increíble, excelente profesionalismo.\" <br><br><strong>María López</strong>: \"¡Recomiendo esta clínica a todos!\" <br><br><strong>Carlos Rodríguez</strong>: \"Excelente atención.\"";
+              break;
+          case "Doctores":
+              response = "Nuestro equipo está conformado por los siguientes especialistas:<br><strong>Dr. Ana Martínez</strong>: Ginecología <br><br><strong>Dr. Carlos Gómez</strong>: Pediatría <br><br><strong>Dra. Laura Rodríguez</strong>: Cardiología;";
+              break;
+          default:
+              response = "Opción no válida, por favor selecciona una opción del menú.";
+      }
+
+      addMessage(response, "bot");
+      askIfWantMore();
+  }
+
+  function processService(service) {
+      addMessage(`Paciente: He seleccionado el servicio: "${service}"`, "user");
+
+      let response = '';
+      switch (service) {
+          case "Consultas Médicas Generales":
+              response = "La consulta médica general tiene un costo de $50. Este servicio incluye un examen general y asesoramiento sobre salud.";
+              break;
+          case "Pediatría":
+              response = "La consulta pediátrica tiene un costo de $60. Se enfoca en la salud de los niños, desde el nacimiento hasta la adolescencia.";
+              break;
+          case "Ginecología":
+              response = "La consulta ginecológica tiene un precio de $70. Está orientada a la salud femenina, incluyendo exámenes preventivos y diagnóstico de enfermedades.";
+              break;
+          case "Cardiología":
+              response = "La consulta cardiológica tiene un costo de $80. Está destinada al diagnóstico y tratamiento de enfermedades cardíacas.";
+              break;
+          case "Dermatología":
+              response = "La consulta dermatológica tiene un precio de $65. Incluye evaluación y tratamiento de problemas de la piel.";
+              break;
+          case "Medicina Estética":
+              response = "Ofrecemos tratamientos de medicina estética como:<br>- Rellenos Faciales: $300 - $600<br>- Botox: $150 - $350<br>- Peeling Químico: $100 - $250";
+              break;
+          default:
+              response = "Opción de servicio no válida.";
+      }
+
+      addMessage(response, "bot");
+      askIfWantMore();
+  }
+
+  function askIfWantMore() {
+      addMessage("¿Deseas saber algo más? Si es así, responde solo 'Si'.", "bot", true);
+  }
+
+  function processUserResponse(response) {
+      if (response.toLowerCase() === "si") {
+          showMainOptions();
+      } else {
+          addMessage("¡Que tengas un buen día! Si necesitas algo más, estaré aquí.", "bot");
+          toggleChat();
+      }
+  }
+
+  function sendMessage() {
+      const message = userInput.value.trim();
+      if (message !== "") {
+          addMessage(message, "user");
+          userInput.value = "";
+          processUserResponse(message);
+      }
+  }
+
+  function toggleChat() {
+      if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+          chatContainer.style.display = "flex";  // Muestra el chat
+          chatBtn.style.display = "none";  // Oculta el botón flotante
+      } else {
+          chatContainer.style.display = "none";  // Oculta el chat
+          chatBtn.style.display = "block";  // Muestra el botón flotante
+      }
+  }
+
+  // Este código garantiza que el chat empieza oculto cuando se carga la página.
+  document.addEventListener("DOMContentLoaded", () => {
+      addMessage(welcomeMessage, "bot", false);
+      showMainOptions();
+  });
+
+  document.getElementById("send-btn").onclick = sendMessage;
+</script>
+
+
+<!-- Scripts de JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+ <!-- Script para el menú hamburguesa -->
+ <script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+</script>
+
+<!-- Script para las partículas -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "#ffffff"
+        }
+      },
+      opacity: {
+        value: 0.5,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 1,
+          opacity_min: 0.1
+        }
+      },
+      size: {
+        value: 4,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 6,
+          size_min: 0.1
+        }
+      },
+      line_linked: {
+        enable: true,
+        distance: 130,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 2
+      },
+      move: {
+        enable: true,
+        speed: 4,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        attract: {
+          enable: false
+        }
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "repulse"
+        },
+        onclick: {
+          enable: true,
+          mode: "push"
+        }
+      }
+    },
+    retina_detect: true
+  });
+</script>
+<script>
+  // JavaScript para el menú hamburguesa
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const serviceItems = document.querySelectorAll('.service');
+
+    serviceItems.forEach((serviceItem) => {
+      const description = serviceItem.querySelector('.description');
+      const readMoreBtn = serviceItem.querySelector('.read-more-btn');
+
+      readMoreBtn.addEventListener('click', function () {
+        description.classList.toggle('show');
+        if (description.classList.contains('show')) {
+          readMoreBtn.textContent = 'Cerrar';
+        } else {
+          readMoreBtn.textContent = 'Leer más';
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function moveImageForMobile() {
+      var secondParagraph = document.getElementById("second-paragraph");
+      var aboutImage = document.querySelector(".about-image");
+      if (window.innerWidth <= 768) {
+        var clonedImage = aboutImage.cloneNode(true);
+        clonedImage.classList.add("mobile");
+        secondParagraph.insertAdjacentElement('afterend', clonedImage);
+      } else {
+        var mobileImages = document.querySelectorAll(".about-image.mobile");
+        mobileImages.forEach(function (image) {
+          image.parentNode.removeChild(image);
+        });
+      }
+    }
+
+    window.addEventListener("resize", moveImageForMobile);
+    moveImageForMobile();
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var questions = document.querySelectorAll('.question');
+    questions.forEach(function (question) {
+      question.addEventListener('click', function () {
+        // Abre o cierra la pregunta actual
+        question.classList.toggle('open');
+        // Cierra la respuesta asociada si está abierta
+        var answer = question.nextElementSibling;
+        if (answer && answer.classList.contains('open')) {
+          answer.classList.remove('open');
+        }
+      });
+    });
+  });
+</script>
+
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <style>
+        /* Estilos del header */
+        header {
+            display: flex;
+            flex-direction: column; /* Organiza los elementos verticalmente */
+            justify-content: center;
+            align-items: center; /* Centra los elementos */
+            background-color: #333;
+            padding: 1rem;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Estilos del campo de búsqueda */
+        #search-container {
+            position: relative;
+            width: 100%; /* Hace que el contenedor de búsqueda ocupe todo el ancho disponible */
+            max-width: 350px; /* Establece un ancho máximo más pequeño para el input de búsqueda */
+            margin-top: 1rem; /* Agrega espacio entre el título y la caja de búsqueda */
+        }
+
+        #search {
+            padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%; /* Hace que el campo de búsqueda ocupe todo el ancho */
+        }
+
+        #search-icon {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Estilos generales para el contenedor de servicios */
+        #servicios {
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Flexbox para contenedor de servicios */
+        .servicios-item {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Estilos de cada servicio */
+        .servicio {
+            flex: 1 1 calc(25% - 10px); /* Tamaño para pantallas grandes */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+            padding: 8px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* Efecto hover para escritorio */
+        @media (min-width: 769px) {
+            .servicio:hover,
+            .servicio:active {
+                transform: translateY(-3px);
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                background-color: #f0f0f0;
+            }
+        }
+
+        /* Tamaños de columnas responsivos */
+        @media (max-width: 1024px) {
+            .servicio {
+                flex: 1 1 calc(33.333% - 10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .servicio {
+                flex: 1 1 calc(50% - 10px);
+            }
+
+            #search {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .servicio {
+                flex: 1 1 100%;
+            }
+
+            /* Ajuste del título y del campo de búsqueda en pantallas pequeñas */
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            #search {
+                font-size: 0.875rem;
+                padding: 0.3rem 2rem 0.3rem 0.5rem;
+                max-width: 250px; /* Hace que la caja de búsqueda sea más pequeña */
+            }
+
+            #search-icon {
+                right: 0.25rem;
+            }
+        }
+
+        /* Estilos de imagen y texto */
+        .servicio img {
+            width: 90%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .servicio h3 {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .descripcion-completa {
+            display: none;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .descripcion-completa.show {
+            display: block;
+        }
+
+        .leer-mas {
+            margin-top: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .leer-mas:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nuestros Servicios</h1>
+        <div id="search-container">
+            <input type="text" id="search" placeholder="Buscar...">
+            <span id="search-icon">🔍</span>
+        </div>
+    </header>
+    
+    <section id="servicios" class="section">
+        <div class="container">
+            <div class="servicios-item">
+                <div class="servicio">
+                    <img src="Imagenes/medicine-2361046_1280.jpg" alt="Atención Primaria">
+                    <h3>Atención Primaria</h3>
+                    <p class="descripcion-completa">Atención médica preventiva y curativa para tu bienestar.</p>
+                    <button class="leer-mas">Leer más</button>
+                </div>
+                <div class="servicio">
+                    <img src="Imagenes/doctor-563428_1280.jpg" alt="Especialidades Médicas">
+                    <h3>Especialidades Médicas</h3>
+                    <p class="descripcion-completa">Servicios especializados en varias áreas de la salud.</p>
+                    <button class="leer-mas">Leer más</button>
+                </div>
+                <div class="servicio">
+                    <img src="Imagenes/office-2820890_1280.jpg" alt="Rehabilitación y Fisioterapia">
+                    <h3>Rehabilitación y Fisioterapia</h3>
+                    <p class="descripcion-completa">Recuperación de lesiones y mejora de calidad de vida.</p>
+                    <button class="leer-mas">Leer más</button>
+                </div>
+                <div class="servicio">
+                    <img src="Imagenes/right-4703934_1280.jpg" alt="Telemedicina">
+                    <h3>Telemedicina</h3>
+                    <p class="descripcion-completa">Consultas médicas a distancia desde tu hogar.</p>
+                    <button class="leer-mas">Leer más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const botonesLeerMas = document.querySelectorAll('.servicio .leer-mas');
+        
+            botonesLeerMas.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    const servicio = this.closest('.servicio');
+                    const descripcionCompleta = servicio.querySelector('.descripcion-completa');
+                    descripcionCompleta.classList.toggle('show');
+                    this.textContent = descripcionCompleta.classList.contains('show') ? 'Cerrar' : 'Leer más';
+                });
+            });
+
+            const servicios = document.querySelectorAll('.servicio');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('in-view');
+                    else entry.target.classList.remove('in-view');
+                });
+            }, { threshold: 0.5 });
+        
+            servicios.forEach(servicio => observer.observe(servicio));
+
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                servicios.forEach(servicio => {
+                    const title = servicio.querySelector('h3').textContent.toLowerCase();
+                    servicio.style.display = title.includes(searchTerm) ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
